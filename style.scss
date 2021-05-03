@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px
+  font-family: 'Poppins', sans-serif; // 'Montserrat', 'Roboto';
+}
+
+:root {
+  --color-success: #2ecc71;
+  --color-error: #e74c3c;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-color: #f9fafb;
+
+  .container {
+    font-size: 1.4rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: calc(300px + 10vw);
+
+    form {
+      width: 100%;
+      padding: 30px 40px;
+
+      h2 {
+        text-align: center;
+        margin: 0 0 20px;
+      }
+
+      .form-control {
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+        position: relative;
+
+        label {
+          color: #777;
+          // label element is inline by default so switch to block
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        input {
+          border: 2px solid #f0f0f0;
+          border-radius: 4px;
+          display: block;
+          width: 100%;
+          padding: 10px;
+          outline: none;
+        }
+
+        input:focus {
+          outline: none;
+          border-color: #777;
+        }
+
+        small {
+          color: var(--color-error);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          visibility: hidden;
+        }
+      }
+      // add green if input is valid
+      .form-control.success {
+        input {
+          border-color: var(--color-success);
+        }
+      }
+      // add red if input is not valid
+      .form-control.error {
+        input {
+          border-color: var(--color-error);
+        }
+      }
+      // show error message if input is not valid
+      .form-control.error {
+        small {
+          visibility: visible;
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #3498db;
+      border: 2px solid #3498db;
+      border-radius: 4px;
+      color: #fff;
+      display: block;
+      font-size: 1.6rem;
+      padding: 10px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  }
+}
